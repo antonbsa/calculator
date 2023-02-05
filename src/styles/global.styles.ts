@@ -1,4 +1,4 @@
-import { globalCss } from '@stitches/react'
+import { globalCss } from '../libs/stitches'
 
 export const globalStyles = globalCss({
   '*': {
@@ -9,5 +9,7 @@ export const globalStyles = globalCss({
   body: {
     backgroundColor: '#807ECE',
     '-webkit-font-smoothing': 'antialiased',
+    color: '$white',
+    fontFamily: 'Rubik, sans-serif',
   },
 })
