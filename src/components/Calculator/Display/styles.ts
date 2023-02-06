@@ -4,7 +4,7 @@ export const Container = styled('div', {
   width: '100%',
   display: 'flex',
   flexDirection: 'column',
-  padding: '54px 36px 26px',
+  padding: '0px 22px 26px',
 })
 
 export const History = styled('span', {
