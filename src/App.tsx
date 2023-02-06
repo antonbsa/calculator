@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import Calculator from './components/Calculator/component'
 import { Container } from './styles/App.styles'
 import { globalStyles } from './styles/global.styles'
@@ -13,4 +13,6 @@ function App() {
   )
 }
 
-export default ReactDOM.render(<App />, document.querySelector('#root'))
+const container = document.getElementById('app')
+const root = createRoot(container!)
+export default root.render(<App />)
