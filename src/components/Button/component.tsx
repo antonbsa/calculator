@@ -1,26 +1,33 @@
 import { CSS } from '@stitches/react'
 import { Container } from './styles'
 
-type VariantType = 'default' | 'operation-light' | 'operation-dark'
+type VariantType = 'default' | 'purple-light' | 'purple-dark'
 
 interface ButtonProps extends CSS {
   value: string
-  type?: 'button' | 'operation'
-  colorType?: 'dark' | 'light'
+  isOperation?: boolean
+  hasDefaultStyle?: boolean
+  backgroundColor?: 'dark' | 'light'
   extraCss?: CSS
+  onButtonClicked: (value: string, isOperation: boolean) => void
 }
 
 export default function Button({
   value,
-  type = 'button',
-  colorType = 'dark',
+  isOperation = false,
+  hasDefaultStyle = false,
+  backgroundColor = 'dark',
   extraCss,
+  onButtonClicked,
 }: ButtonProps) {
-  const variantValue: VariantType =
-    type === 'operation' ? `${type}-${colorType}` : 'default'
+  const variantValue: VariantType = hasDefaultStyle
+    ? 'default'
+    : isOperation
+    ? `purple-${backgroundColor}`
+    : 'default'
 
   function handleClick(e: HTMLButtonElement) {
-    console.log(e.value)
+    onButtonClicked(e.value, isOperation)
   }
 
   return (

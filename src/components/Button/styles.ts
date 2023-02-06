@@ -16,11 +16,11 @@ export const Container = styled('button', {
         background:
           'linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), $backgroundDark',
       },
-      'operation-dark': {
+      'purple-dark': {
         background:
           'linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), $purpleDark',
       },
-      'operation-light': {
+      'purple-light': {
         background:
           'linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), $purpleMedium;',
         boxShadow:

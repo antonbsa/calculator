@@ -1,12 +1,22 @@
+import { useState } from 'react'
 import { Container, History, InputValues, Output, Operator } from './styles'
 
-export default function Display() {
+interface DisplayProps {
+  value: string
+}
+
+export default function Display({ value }: DisplayProps) {
+  // eslint-disable-next-line no-unused-vars
+  const [operatorValue, setOperatorValue] = useState<string | null>(null)
+  // eslint-disable-next-line no-unused-vars
+  const [historyValue, setHistoryValue] = useState<string | null>(null)
+
   return (
     <Container>
-      <History>1 + 1</History>
+      <History>{historyValue}</History>
       <Output>
-        <Operator>=</Operator>
-        <InputValues>2</InputValues>
+        <Operator>{operatorValue}</Operator>
+        <InputValues>{value}</InputValues>
       </Output>
     </Container>
   )

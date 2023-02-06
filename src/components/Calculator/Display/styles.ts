@@ -9,6 +9,7 @@ export const Container = styled('div', {
 
 export const History = styled('span', {
   display: 'flex',
+  height: 24,
   justifyContent: 'flex-end',
   color: '$gray',
   marginBottom: 8,
