@@ -10,6 +10,14 @@ export const Container = styled('button', {
   boxShadow:
     '0px 4px 6px rgba(0, 0, 0, 0.1), 0px 2px 4px rgba(0, 0, 0, 0.26), inset 0px 2px 3px rgba(255, 255, 255, 0.06)',
   fontSize: 24,
+  transition: 'all 0.15s',
+  '&:hover': {
+    filter: 'brightness(85%)',
+  },
+  '&:active': {
+    boxShadow:
+      'inset 0px 4px 6px rgba(0, 0, 0, 0.1), inset 0px -6px 6px rgba(0, 0, 0, 0.15)',
+  },
   variants: {
     variant: {
       default: {
@@ -21,6 +29,9 @@ export const Container = styled('button', {
           'linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(255, 255, 255, 0.05) 100%), $purpleDark',
       },
       'purple-light': {
+        '&:hover': {
+          filter: 'brightness(65%)',
+        },
         background:
           'linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%), $purpleMedium;',
         boxShadow:
