@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Beauty Calculator 🙃
+(Project built based on this Figma's design interface - [link](https://www.figma.com/file/PFGjbb9QHIqcjTCQF68iwD/%23boraCodar---Desafio-5-(Community)))
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+___
 
 ## Available Scripts
 
