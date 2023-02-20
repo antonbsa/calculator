@@ -2,12 +2,12 @@ import Button from '../../Button/component'
 import { Container, KeyboardRow } from './styles'
 
 interface KeyboardProps {
-  onButtonClicked: (value: string, isOperation: boolean) => void
+  onClick: (value: string, isOperation: boolean) => void
 }
 
-export default function Keyboard({ onButtonClicked }: KeyboardProps) {
-  function handleButtonClicked(stringValue: string, isOperation: boolean) {
-    onButtonClicked(stringValue, isOperation)
+export default function Keyboard({ onClick }: KeyboardProps) {
+  function handleOperationButtonClick(stringValue: string) {
+    onClick(stringValue, true)
   }
 
   return (
@@ -20,39 +20,45 @@ export default function Keyboard({ onButtonClicked }: KeyboardProps) {
           extraCss={{
             color: '$purpleLight',
           }}
-          onButtonClicked={handleButtonClicked}
+          onButtonClick={onClick}
         />
+        <Button value="C" isOperation hasDefaultStyle onButtonClick={onClick} />
+        <Button value="%" isOperation hasDefaultStyle onButtonClick={onClick} />
         <Button
-          value="C"
+          value="/"
           isOperation
-          hasDefaultStyle
-          onButtonClicked={handleButtonClicked}
+          onButtonClick={handleOperationButtonClick}
         />
+      </KeyboardRow>
+      <KeyboardRow>
+        <Button value="7" onButtonClick={onClick} />
+        <Button value="8" onButtonClick={onClick} />
+        <Button value="9" onButtonClick={onClick} />
         <Button
-          value="%"
+          value="X"
           isOperation
-          hasDefaultStyle
-          onButtonClicked={handleButtonClicked}
+          onButtonClick={handleOperationButtonClick}
         />
-        <Button value="/" isOperation onButtonClicked={handleButtonClicked} />
       </KeyboardRow>
       <KeyboardRow>
-        <Button value="7" onButtonClicked={handleButtonClicked} />
-        <Button value="8" onButtonClicked={handleButtonClicked} />
-        <Button value="9" onButtonClicked={handleButtonClicked} />
-        <Button value="X" isOperation onButtonClicked={handleButtonClicked} />
+        <Button value="4" onButtonClick={onClick} />
+        <Button value="5" onButtonClick={onClick} />
+        <Button value="6" onButtonClick={onClick} />
+        <Button
+          value="-"
+          isOperation
+          onButtonClick={handleOperationButtonClick}
+        />
       </KeyboardRow>
       <KeyboardRow>
-        <Button value="4" onButtonClicked={handleButtonClicked} />
-        <Button value="5" onButtonClicked={handleButtonClicked} />
-        <Button value="6" onButtonClicked={handleButtonClicked} />
-        <Button value="-" isOperation onButtonClicked={handleButtonClicked} />
-      </KeyboardRow>
-      <KeyboardRow>
-        <Button value="1" onButtonClicked={handleButtonClicked} />
-        <Button value="2" onButtonClicked={handleButtonClicked} />
-        <Button value="3" onButtonClicked={handleButtonClicked} />
-        <Button value="+" isOperation onButtonClicked={handleButtonClicked} />
+        <Button value="1" onButtonClick={onClick} />
+        <Button value="2" onButtonClick={onClick} />
+        <Button value="3" onButtonClick={onClick} />
+        <Button
+          value="+"
+          isOperation
+          onButtonClick={handleOperationButtonClick}
+        />
       </KeyboardRow>
       <KeyboardRow>
         <Button
@@ -60,20 +66,15 @@ export default function Keyboard({ onButtonClicked }: KeyboardProps) {
           isOperation
           hasDefaultStyle
           backgroundColor="light"
-          onButtonClicked={handleButtonClicked}
+          onButtonClick={onClick}
         />
-        <Button value="0" onButtonClicked={handleButtonClicked} />
-        <Button
-          value=","
-          hasDefaultStyle
-          isOperation
-          onButtonClicked={handleButtonClicked}
-        />
+        <Button value="0" onButtonClick={onClick} />
+        <Button value="." hasDefaultStyle isOperation onButtonClick={onClick} />
         <Button
           value="="
           isOperation
           backgroundColor="light"
-          onButtonClicked={handleButtonClicked}
+          onButtonClick={onClick}
         />
       </KeyboardRow>
     </Container>

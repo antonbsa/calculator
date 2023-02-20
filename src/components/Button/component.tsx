@@ -9,7 +9,7 @@ interface ButtonProps extends CSS {
   hasDefaultStyle?: boolean
   backgroundColor?: 'dark' | 'light'
   extraCss?: CSS
-  onButtonClicked: (value: string, isOperation: boolean) => void
+  onButtonClick: (value: string, isOperation: boolean) => void
 }
 
 export default function Button({
@@ -18,7 +18,7 @@ export default function Button({
   hasDefaultStyle = false,
   backgroundColor = 'dark',
   extraCss,
-  onButtonClicked,
+  onButtonClick,
 }: ButtonProps) {
   const variantValue: VariantType = hasDefaultStyle
     ? 'default'
@@ -27,7 +27,7 @@ export default function Button({
     : 'default'
 
   function handleClick(e: HTMLButtonElement) {
-    onButtonClicked(e.value, isOperation)
+    onButtonClick(e.value, isOperation)
   }
 
   return (

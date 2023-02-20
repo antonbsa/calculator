@@ -1,22 +1,22 @@
-import { useState } from 'react'
 import { Container, History, InputValues, Output, Operator } from './styles'
 
 interface DisplayProps {
-  value: string
+  displayValue: string
+  operatorValue: string | null
+  historyValue: string | null
 }
 
-export default function Display({ value }: DisplayProps) {
-  // eslint-disable-next-line no-unused-vars
-  const [operatorValue, setOperatorValue] = useState<string | null>(null)
-  // eslint-disable-next-line no-unused-vars
-  const [historyValue, setHistoryValue] = useState<string | null>(null)
-
+export default function Display({
+  displayValue,
+  operatorValue,
+  historyValue,
+}: DisplayProps) {
   return (
     <Container>
-      <History>{historyValue}</History>
+      <History className="selectionDisabled">{historyValue}</History>
       <Output>
-        <Operator>{operatorValue}</Operator>
-        <InputValues>{value}</InputValues>
+        <Operator className="selectionDisabled">{operatorValue}</Operator>
+        <InputValues>{displayValue}</InputValues>
       </Output>
     </Container>
   )
